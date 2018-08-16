@@ -1,0 +1,99 @@
+############AGUILAR SERRANO KAREN DENISSE###############################
+####1)Crear una matriz con la función dim()de 5 columnas y 4 renglones
+#esta matriz está basada en un vector que contiene estos datos 11:30
+##el nombre de los renglones es el siguiente (toluca, pachuga, gdl,mty)
+# el nombre de las columnas es (escuela1, escuela 2, escuela3, escuela4, escuela 5)
+#incorporar el nombre de los renglones y las columnas de la matriz
+# identificar el dato de la escuela 3 de Toluca, de la escuela 5 de gdl y la escuela 1 de Pachuca
+
+#####1Crear la matriz de 4*5 basada en un vector que contiene los datos aleatorios en el rango 11:30
+v1<-sample(11:30,20,replace=T)
+v1
+matriz1<-matrix(v1,4,5,T)
+matriz1
+#Renombrar las columnas y los renglones de matriz1
+colnames(matriz1)<-c("escuela 1", "escuela 2", "escuela 3", "escuela 4", "escuela 5")
+rownames(matriz1)<-c("Toluca","Pachuca","Gdl","Mty")
+matriz1
+#Identificar el dato de la escuela 3 de Toluca
+tol3<-matriz1["Toluca", "escuela 3"]
+tol3
+#Identificar de la escuela 5 de Gdl
+gdl5<-matriz1["Gdl","escuela 5"]
+gdl5
+#Identificar la escuela 1 de Pachuca
+pach1<-matriz1["Pachuca","escuela 1"]
+pach1
+
+##### 2) Crear con la función matrix una matriz de 6 renglones y 3 columnas y preguntar por el datos del renglón 3
+#columna 3
+
+matriz2<-matrix(sample(1:18),6,3,T)
+matriz2
+matriz2[3,3]
+
+
+###### 3)Completar el código 
+s<-matrix(1:9,nrow=3)
+s
+pos<-s[,2]*s[,1]
+pos
+
+
+##### 4) Completar código 
+a<-c("pequeño","largo","enorme")
+b<-a!="largo"
+a
+b
+a[b] #extraemos el dato "largo" del vector 2
+
+
+###### 5)Crear 3 variables de 4 entradas. Las variables de nombre: facultad, licenciatura, calificación alumnos
+facultad<-c("Economía","Química","Contaduría","Ingeniería")
+facultad
+licenciatura<-c("Actuaría","QFB","Administración","Ing.Mecatrónica")
+licenciatura
+calif.alumnos<-c(7.4,8.9,9.7,7.6)
+calif.alumnos
+#verificar con r que tipo de variables son (númericas o caracteres)
+class(facultad)
+class(licenciatura)
+class(calif.alumnos)
+
+dataf1=data.frame(facultad,licenciatura,calif.alumnos)
+dataf1
+
+#borrar las variables facultad y calificación alumno 3
+dataf1[-3,]
+
+
+
+##### 6) Generar la siguiente información
+nombre<-c("carlos","juan","raquel","paty")
+nombre
+años<-c(32,35,43,25)
+años
+seguridad_social<-c("IMSS","IMSS","ISSSTE","PRIVADO")
+seguridad_social
+situación_conyugal<-c("casado","soltero", "soltero","unión libre")
+situación_conyugal
+ocupación<-c("contador","carpintero","profesora","diseñador")
+ocupación
+#Hacer un dataframe de estos vectores
+df=data.frame(nombre,años,seguridad_social,situación_conyugal,ocupación)
+df
+
+df1=cbind(nombre,años,seguridad_social,situación_conyugal,ocupación)
+df1
+
+ocupación_juanpaty<-c(df1[2,5],df1[4,5])
+ocupación_juanpaty
+
+vec2<-c(df1[3,3],df1[1,3])
+vec2
+
+vec3<-c(df1[4,4],df1[2,4])
+vec3
+
+"Suma años"
+sum(años)
